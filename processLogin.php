@@ -1,10 +1,13 @@
 <?php
 include_once 'autoload.php';
 session_start();
+header('location:index.php');
 $email = $_POST['email'];
 $password = $_POST['pwd'];
+var_dump($_POST);
 $bdd=new Requete('user');
 $req=$bdd->findBycondition("email='$email' AND passwd='$password'");
+var_dump($req);
 if ($email!="" && $password!="") {
     if ($req) {
         $_SESSION['connect']=$req[0]->id;
