@@ -180,7 +180,6 @@ function modify() {
     d=Array.from(d);
     i=0;
     d.forEach((x)=>{
-        alert(c[i].textContent);
         x.firstElementChild.nextElementSibling.setAttribute("value",c[i].textContent);
     i++;
   });   
