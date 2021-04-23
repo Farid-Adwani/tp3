@@ -1,7 +1,6 @@
 <?php
 include_once 'autoload.php';
 session_start();
-header('location:index.php');
 $email = $_POST['email'];
 $password = $_POST['pwd'];
 var_dump($_POST);
