@@ -41,7 +41,7 @@ class Requete
         
     }
     public function add() {
-        include_once('imageupload.php');
+        include_once('fragments/imageupload.php');
         $request = "INSERT INTO ".$this->tableName ." (`Nom`, `Prénom`, `Age`, `Sexe`, `Email`, `Numéro GSM`, `Poste`,`Photo`) VALUES ('".$_POST['Nom']."', '".$_POST['Prénom']."', '" .$_POST['Age']."', '".$_POST['Sexe']."', '" .$_POST['Email']."', '".$_POST['Numéro_GSM']."', '".$_POST['Poste']."', '".$_FILES['Photo']['name']."')";
         $response =$this->bd->prepare($request); 
         $response->execute([]);
@@ -54,14 +54,14 @@ class Requete
         
     }
     public function update() {
-        include_once('imageupload.php');
+        include_once('fragments/imageupload.php');
         if($_FILES['Photo']['name']!="") {
             $request = "UPDATE " . $this->tableName . " SET `Nom`='" . $_POST['Nom'] . "',`Prénom`='" . $_POST['Prénom'] . "',`Age`='" . $_POST['Age'] . "',`Sexe`='" . $_POST['Sexe'] . "',`Email`='" . $_POST['Email'] . "',`Numéro GSM`='" . $_POST['Numéro_GSM'] . "',`Poste`='" . $_POST['Poste'] . "',`Photo`='" . $_FILES['Photo']['name'] . "' WHERE `ID`= '" . $_POST['ID'] . "'";
         }else{
             $request = "UPDATE " . $this->tableName . " SET `Nom`='" . $_POST['Nom'] . "',`Prénom`='" . $_POST['Prénom'] . "',`Age`='" . $_POST['Age'] . "',`Sexe`='" . $_POST['Sexe'] . "',`Email`='" . $_POST['Email'] . "',`Numéro GSM`='" . $_POST['Numéro_GSM'] . "',`Poste`='" . $_POST['Poste'] ."' WHERE `ID`= '" . $_POST['ID'] . "'";
 
         }
-        var_dump($request);
+   
         $response =$this->bd->prepare($request); 
         $response->execute([]);
         $dat=date('m/d/Y h:i:s a', time());

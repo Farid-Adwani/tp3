@@ -1,6 +1,6 @@
 <?php
     session_start();
-include_once 'isAuthenticated.php';
+include_once 'fragments/isAuthenticated.php';
 $pageTitle = 'login';
 include_once 'fragments/header.php';
 
@@ -33,8 +33,6 @@ include_once 'fragments/header.php';
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password">
-                <a id="emailHelp" class="form-text text-muted" href="#">Mot de passe oublié</a>
-
         </div>
         <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase " >Se connecter</button>
     </form>

@@ -3,7 +3,7 @@ session_start();
 $pageTitle = 'home';
 include_once 'autoload.php';
 include_once 'fragments/header.php';
-include_once 'isNotAuthenticated.php';
+include_once 'fragments/isNotAuthenticated.php';
 include_once 'fragments/alertSuccess.php';
 $bdd=new Requete('personne');
 $req=$bdd->findAll();
@@ -32,8 +32,8 @@ $req2=$bdd2->findAll();
   </div>
 </nav>
 <center>
-<button class="btn btn-outline-dark" onclick="add();" data-bs-toggle="collapse" data-bs-target=".needs-validation" aria-expanded="false" >Add</button>
-<button class="btn btn-outline-info" onclick="modify();" data-bs-toggle="collapse" data-bs-target=".needs-validation" aria-expanded="false" >Modify</button>
+<button class="btn btn-dark" onclick="add();" data-bs-toggle="collapse" data-bs-target=".needs-validation" aria-expanded="false" >Add</button>
+<button class="btn btn-info" onclick="modify();" data-bs-toggle="collapse" data-bs-target=".needs-validation" aria-expanded="false" >Modify</button>
 <button button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".historique" aria-expanded="false"">Historique</button>
 <button class="btn btn-danger" onclick="deletee();">Delete</button>
 </center>
